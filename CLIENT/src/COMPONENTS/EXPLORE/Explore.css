@@ -1,0 +1,139 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5; 
+}
+
+.explore-content {
+  text-align: center;
+  margin-bottom: 180px;
+}
+
+.heading {
+  align-items: center;
+  margin-top: 45px;
+}
+
+.heading h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.heading p {
+  font-size: 1rem;
+  color: #777;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.collection {
+  display: flex;
+  gap: 74px;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.collection-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.explore-img {
+  max-height: 295px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s;
+}
+
+.explore-img:hover {
+  transform: scale(1.05);
+}
+
+.shop {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.shop .left {
+  padding: 20px;
+}
+
+.shop .title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.shop .left p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.shop-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.shop-button:hover {
+  background-color: #218838;
+}
+
+.shop .right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.shop-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.shop-item {
+  flex: 1 1 calc(25% - 20px);
+  max-width: calc(25% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shop-img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.shop-img:hover {
+  transform: scale(1.05);
+}
+
+.item-details {
+  text-align: center;
+  margin-top: 10px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.item-details p {
+  margin: 5px 0;
+}

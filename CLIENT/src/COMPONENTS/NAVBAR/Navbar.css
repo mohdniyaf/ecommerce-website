@@ -1,0 +1,60 @@
+/* Navbar.css */
+.navbar {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #544b43;
+  color: white;
+}
+
+.nav-logo {
+  width: 150px;
+  margin-left: 30px;
+  font-variant: small-caps;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  font-size: 15px;
+  cursor: pointer;
+  color: white; /* Ensures nav-menu items have white text */
+  margin-left: 575px;
+}
+
+
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+  gap: 5px;
+}
+
+.nav-icon {
+  margin-right: 2rem;
+  cursor: pointer;
+  color: white; 
+  
+}
+
+.nav-icon:hover {
+  color: #ddd;
+}
+
+.signup {
+  margin-left: 15px;
+  padding: 8px 16px;
+  border: 2px solid white; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup:hover {
+  background-color: white; /* Background color on hover */
+  color: #dbab7c; /* Text color on hover */
+}
