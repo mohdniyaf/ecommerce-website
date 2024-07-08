@@ -7,8 +7,7 @@ const protect = async (req, res, next) => {
   if (!token) {
     return res.status(401).json({ message: "Unauthorized. Token not provided" });
   }
-
-  const jwtToken = token.replace("Bearer", "").trim();
+  const jwtToken = token.replace("Bearer", " ").trim();
   
   try {
     const isVerified = await jwt.verify(jwtToken, process.env.JWT_SECRET_KEY);
@@ -20,6 +19,7 @@ const protect = async (req, res, next) => {
     }
     req.user = user;
     req.token = jwtToken;
+   
     next();
   } catch (error) {
     console.error('Token Verification Error:', error);
@@ -28,11 +28,12 @@ const protect = async (req, res, next) => {
 };
 
 const isAdmin = (req, res, next) => {
-  if (req.user.isAdmin) {
+  if (req.user && req.user.isAdmin) {
     next();
   } else {
     res.status(401).json({ message: 'Not Admin' });
   }
 };
 
-module.exports = { protect, isAdmin };
+
+module.exports = { protect ,isAdmin};

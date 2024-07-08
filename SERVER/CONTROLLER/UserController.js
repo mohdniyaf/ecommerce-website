@@ -47,6 +47,7 @@ const getuser = async (req, res) => {
     try {
         const userdata = await User.find();
         res.status(200).json(userdata);
+        
     } catch (error) {
         console.log(error);
         res.status(500).json({ err: "Internal error" });
