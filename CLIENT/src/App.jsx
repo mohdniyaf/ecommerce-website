@@ -12,6 +12,8 @@ import Cart from './PAGES/CART/Cart';
 import Account from './PAGES/ACCOUNT/Account';
 import ProfileInfo from './PAGES/ACCOUNT/ProfileInformation/ProfileIn';
 import Manageadd from './PAGES/ACCOUNT/Manageaddress/Manageadd';
+import OrderInfo from './PAGES/ACCOUNT/my order/myorder';
+import Wallet from './PAGES/ACCOUNT/Wallet/wallet';
 
 const App = () => {
   return (
@@ -29,7 +31,8 @@ const App = () => {
         <Route path="/account" element={<Account />}>
           <Route path="profile" element={<ProfileInfo />} />
           <Route path="manage" element={<Manageadd />} />
-          <Route path="wallet" element={<div>My Wallet</div>} />
+          <Route path='order' element={<OrderInfo/>}/>
+          <Route path="wallet" element={<Wallet/>} />
         </Route>
       </Routes>
     </Router>

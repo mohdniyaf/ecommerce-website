@@ -33,7 +33,7 @@ const Navbar = () => {
       <NavLink to="/cart" activeClassName="active-link"  ><FaShoppingCart className="nav-icon" /></NavLink>
         {isLoggedIn ? (
           <>
-          <NavLink to="/account" activeClassName="active-link" size={30}><RiAccountCircleFill className="nav-icon" /></NavLink>
+          <NavLink to="/account/profile" activeClassName="active-link" size={30}><RiAccountCircleFill className="nav-icon" /></NavLink>
           </>
         ) : (
           <NavLink to="/signup" className="signup" activeClassName="active-link">SIGNUP</NavLink>
