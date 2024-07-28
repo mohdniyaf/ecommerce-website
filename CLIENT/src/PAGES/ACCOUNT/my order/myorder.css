@@ -1,0 +1,119 @@
+.myorder-head {
+  padding-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.form {
+  height: 35px;
+  width: 85%;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+
+.search-button {
+  height: 35px;
+  background-color: #544b43;
+  width: 80px;
+  color: azure;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.order-category {
+  padding-left: 50px;
+  margin-top: 20px;
+}
+
+.category-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.order-section {
+  padding: 20px 50px;
+}
+
+.order-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.order-details {
+  flex: 2;
+  margin-left: 20px;
+}
+
+.order-details p {
+  margin: 5px 0;
+}
+
+.order-status {
+  color: red;
+  font-weight: bold;
+}
+
+.order-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.action-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.return-order {
+  background-color: blue;
+  color: white;
+}
+
+.leave-review {
+  background-color: green;
+  color: white;
+}
+
+.track-order {
+  background-color: orange;
+  color: white;
+}
+
+.cancel-order {
+  background-color: red;
+  color: white;
+}
+
+.order-image {
+  flex: 1;
+  text-align: center;
+}
+
+.order-image img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.price {
+  margin-top: 10px;
+  font-weight: bold;
+}

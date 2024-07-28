@@ -44,33 +44,6 @@ export const boxlist=[
     box_img:box1,
     box_price:1000
      },
-     {
-      box_name:box1,
-      box_img:box2,
-      box_price:1000
-       },{
-        box_name:box1,
-        box_img:box3,
-        box_price:1000
-         },
-         {
-          box_name:box1,
-          box_img:box4,
-          box_price:1000
-           },
-           {
-            box_name:box1,
-            box_img:box5,
-            box_price:1000
-             },
-             {
-              box_name:box1,
-              box_img:box6,
-              box_price:1000
-               },
-               {
-                box_name:box1,
-                box_img:box7,
-                box_price:1000
-                 }
+    
+          
 ]

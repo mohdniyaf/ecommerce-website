@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const connectDB = require('./Config/db');
 const userRoute = require('./ROUTER/userRoute');
+const ProductRoute=require('./ROUTER/productRoute');
 const cors = require('cors');
 const errorMiddleware = require('./MIDDLEWARE/errorMiddleware');
 
@@ -22,7 +23,8 @@ app.get('/', (req, res) => {
     res.send("server created");
 });
 
-app.use('/auth/users', userRoute);
+app.use('/api/users', userRoute);
+app.use('/api/users',ProductRoute);
 
 app.use(errorMiddleware);
 

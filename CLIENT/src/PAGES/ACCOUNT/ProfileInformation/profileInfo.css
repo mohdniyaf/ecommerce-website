@@ -1,0 +1,72 @@
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 20px auto;
+  margin-left: 23px;
+  margin-top: 5px;
+  gap: 20px;
+}
+
+
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: rgb(243, 246, 246);
+  border-radius: 5px;
+  height: 53px;
+  width: 286px;
+  padding: 10px;
+}
+
+.profile-icon {
+  font-size: 20px;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+.profile-text {
+  font-size: 16px;
+  color: #333;
+}
+
+.profile-input {
+  font-size: 16px;
+  color: #333;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.save-button, .edit-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.edit-button {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+
+.change_password {
+  margin-top: -26px;
+  padding-left: 3px;
+}

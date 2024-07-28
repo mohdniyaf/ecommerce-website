@@ -1,0 +1,104 @@
+.heading {
+    padding-left: 45px;
+    margin-bottom: 1rem;
+}
+
+.add_button button {
+    height: 32px;
+    width: 105px;
+    border-radius: 10px;
+    background: #544b43;
+    color: azure;
+    margin-left: 50px;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.address_info {
+    margin-top: 28px;
+    background-color: azure;
+    margin-left: 47px;
+    margin-right: 50px;
+    border-radius: 8px;
+}
+
+.address_info_head {
+    background: #544b43;
+    padding-left: 20px;
+    color: azure;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.address_info_detail {
+    padding: 10px;
+}
+
+.address_info_detail ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.address_info_detail ul li {
+    margin-bottom: 10px;
+}
+
+.action_buttons {
+   
+    margin-top: 10px;
+}
+
+.edit_button, .save_button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit_button {
+    background: #ff4b4b;
+    color: white;
+    margin-left: 10px;
+}
+
+.save_button {
+    background: #4caf50;
+    color: white;
+}
+
+/* New Address Form Styling */
+.address_form {
+    margin-top: 20px;
+    padding: 20px;
+    margin-left: 47px;
+    margin-right: 50px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.address_form input,
+.address_form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.address_form input::placeholder {
+    color: #999;
+}
+
+.address_form .save_button {
+    align-self: flex-end;
+    width: 120px;
+    height: 40px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}

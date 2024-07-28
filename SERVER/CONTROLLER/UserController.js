@@ -5,24 +5,30 @@ const bcrypt = require('bcrypt');
 const register = async (req, res) => {
     try {
         const { email, username, password } = req.body;
-        if (!email || !username || !password) {
-            return res.status(400).json("Email, username, and password are required");
+        const user = await User.findOne({ email });
+  
+        if (!user) {
+            const newUser = new User(req.body);
+            await newUser.save();
+
+            res.json({
+                _id: newUser._id,
+                name: newUser.username,
+                email: newUser.email,
+                isAdmin: newUser.isAdmin,
+                token: generateToken(newUser._id),
+            });
+        } else {
+            res.status(400); 
+            throw new Error("Email already in use!");
         }
-        const userExist = await User.findOne({ email });
-        if (userExist) {
-            return res.status(409).json("Email already exists");
-        }
-        const newUser = new User(req.body);
-        await newUser.save();
-        console.log("Data saved");
-        const token = generateToken(newUser.id);
-        console.log(process.env.jwtsecret);
-        res.status(201).json({ newUser, token });
     } catch (error) {
         console.error(error);
         res.status(500).send("Server error");
     }
-}
+};
+
+
 
 const login = async (req, res) => {
     const { email, password } = req.body;
@@ -45,14 +51,18 @@ const login = async (req, res) => {
 
 const getuser = async (req, res) => {
     try {
-        const userdata = await User.find();
-        res.status(200).json(userdata);
-        
+        const userId = req.user.id; // Assuming req.user is populated by your protect middleware
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found.' });
+        }
+        res.status(200).json(user);
     } catch (error) {
         console.log(error);
         res.status(500).json({ err: "Internal error" });
     }
-}
+};
+
 
 const updateuser = async (req, res) => {
     try {
@@ -90,4 +100,6 @@ const deleteuser = async (req, res) => {
     }
 }
 
-module.exports = { register, login, getuser, updateuser, deleteuser };
+
+
+module.exports = { register, login, getuser, updateuser, deleteuser};

@@ -1,0 +1,141 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cart-container {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 50px;
+}
+
+.cart-box {
+  background-color: azure;
+  width: 60%; /* Adjusted width to make room for summary */
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+  margin-right: 2%;
+  border: 1px solid lightgray;
+}
+
+.cart-heading {
+  display: flex;
+  align-items: center;
+  background-color: azure;
+  height: 70px;
+  width: 100%;
+  padding-left: 35px;
+  border-bottom: 1px solid lightgray;
+}
+
+.cart-heading-price {
+  margin-left: 303px;
+}
+
+.cart-heading-quantity {
+  margin-left: 64px;
+}
+
+.cart-heading-total {
+  margin-left: 68px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background-color: azure;
+  margin-bottom: 10px;
+}
+
+.cart-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 60px;
+}
+
+.cart-price, .cart-quantity, .cart-total {
+  margin-left: 101px;
+}
+
+.remove-button {
+  margin-left: 50px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.remove-button svg {
+  margin-right: 5px;
+}
+
+.cart-coupon {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 15px 25px;
+  border: 1px solid lightgray;
+}
+
+.coupon-input {
+  border-radius: 1rem;
+  margin-right: 30px;
+  padding-left: 20px;
+}
+
+.cart-coupon button {
+  border-radius: 8px;
+  margin-right: 25px;
+}
+
+.cart-summary {
+  background-color: azure;
+  width: 30%; /* Adjust width */
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border: 1px solid lightgray;
+}
+
+.cart-summary h2 {
+  margin-bottom: 52px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.summary-item.total {
+  font-weight: bold;
+  border-top: 1px solid lightgray;
+  padding-top: 10px;
+}
+
+.checkout-button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}

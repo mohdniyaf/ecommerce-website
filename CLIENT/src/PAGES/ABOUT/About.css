@@ -11,39 +11,40 @@
     flex: 1;
     padding-right: 40px;
     margin-top: 20px;
-    text-align: left; /* Align text to the left */
+    text-align: left; 
+    margin-left: 35px;
   }
   
   .right {
     flex: 1;
     display: flex;
-    align-items: center; /* Align items vertically centered */
+    align-items: center; 
   }
   
   .features {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start; /* Align content to the start */
+    justify-content: flex-start;
   }
   
   .feature {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: calc(50% - 10px); /* Two items per row with some space between */
+    width: calc(50% - 10px);
     margin-bottom: 20px;
     gap: 10px;
   }
   
   .feature .icon {
-    font-size: 2.5rem; /* Increased icon size */
-    color: rgb(12, 14, 12); /* Icon color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for the icon */
+    font-size: 2.5rem;
+    color: rgb(12, 14, 12);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
   }
   
   .feature h2, .feature p, .main-description {
-    color: #666; /* Color for headings and text */
+    color: #666;
   }
   
   .feature h2 {
@@ -57,6 +58,7 @@
   
   .image-container {
     text-align: center;
+    padding-left: 75px;
   }
   
   .image-container img {
