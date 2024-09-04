@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const connectDB = require('./Config/db');
-const userRoute = require('./ROUTER/userRoute');
-const ProductRoute=require('./ROUTER/productRoute');
+const userRoute = require('./ROUTER/user');
+const adminRoute=require('./ROUTER/admin');
 const cors = require('cors');
 const errorMiddleware = require('./MIDDLEWARE/errorMiddleware');
 
@@ -18,13 +18,15 @@ const corsOption = {
 const app = express();
 app.use(express.json());
 app.use(cors(corsOption));
+app.use('/uploads/images', express.static('uploads/images'));
+
 
 app.get('/', (req, res) => {
     res.send("server created");
 });
 
 app.use('/api/users', userRoute);
-app.use('/api/users',ProductRoute);
+app.use('/api/admin',adminRoute);
 
 app.use(errorMiddleware);
 

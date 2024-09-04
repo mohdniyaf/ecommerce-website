@@ -12,7 +12,6 @@ const Home = () => {
     <Explore/>
     <About/>
     <Footer/>
-    
    </>
   )
 }

@@ -2,7 +2,6 @@
   
   .header {
     height: 29vw;
-    margin: 1px auto;
     background: url(/src/assets/Home.png) no-repeat center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -47,7 +46,7 @@
     margin-top: 10px; /* Adjust spacing */
   }
   
-  .header-button {
+  .header-button-buy-now {
     border: 2px solid var(--navbar-bg-color);
     border-radius: 50px;
     padding: 1vw 2.3vw; /* Adjust button padding */
@@ -59,7 +58,7 @@
     transition: background-color 0.3s, color 0.3s;
   }
   
-  .header-button:hover {
+  .header-button-buy-now:hover {
     background-color: green;
     color: white;
   }

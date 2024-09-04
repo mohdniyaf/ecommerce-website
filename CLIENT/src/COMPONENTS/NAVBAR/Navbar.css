@@ -24,7 +24,23 @@
   margin-left: 575px;
 }
 
+.nav-menu li {
+  position: relative; /* This is necessary for the underline effect */
+}
 
+.nav-menu .active-link {
+  color: #ddd; /* Change color of the active link */
+}
+
+.nav-menu .active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust as needed to position the underline */
+  width: 100%;
+  height: 2px; 
+  background: #1d1d1d; /* Color of the underline */
+}
 
 .nav-icons {
   display: flex;
@@ -37,7 +53,6 @@
   margin-right: 2rem;
   cursor: pointer;
   color: white; 
-  
 }
 
 .nav-icon:hover {

@@ -11,20 +11,20 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <h1>Furniture.com</h1>
+        <h1>SpaceClassic</h1>
       </div>
       <ul className="nav-menu">
         <li>
           <NavLink to="/" exact activeClassName="active-link">HOME</NavLink>
         </li>
         <li>
-          <NavLink to="/shop" activeClassName="active-link">SHOP</NavLink>
+          <NavLink to="/allproduct" activeClassName="active-link">ALL PRODUCT</NavLink>
         </li>
         <li>
-          <NavLink to="/about" activeClassName="active-link">ABOUT</NavLink>
+          <NavLink to="/chair" activeClassName="active-link">CHAIR</NavLink>
         </li>
         <li>
-          <NavLink to="/contact" activeClassName="active-link">CONTACT</NavLink>
+          <NavLink to="/box" activeClassName="active-link">DINNING TABLE</NavLink>
         </li>
       </ul>
       <div className="nav-icons">

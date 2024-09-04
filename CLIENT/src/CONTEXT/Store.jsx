@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
+// Auth Context
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -18,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ storeTokenInLS, LogoutUser, isLoggedIn ,token }}>
+    <AuthContext.Provider value={{ storeTokenInLS, LogoutUser, isLoggedIn, token }}>
       {children}
     </AuthContext.Provider>
   );

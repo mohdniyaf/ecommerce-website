@@ -1,7 +1,6 @@
 import React from 'react';
 import './Explore.css';
-import { assets, boxlist, chairlist } from '../../assets/assest';
-import About from '../../PAGES/ABOUT/About';
+import { assets, products } from '../../assets/assest';
 
 const Explore = () => {
   return (
@@ -35,12 +34,12 @@ const Explore = () => {
         </div>
         <div className="right">
           <div className="shop-gallery">
-            {boxlist.map((box, index) => (
-              <div key={index} className="shop-item">
-                <img src={box.box_img} alt={`Box ${index + 1}`} className="shop-img" />
+            {products.map((product, index) => (
+              <div key={product.id} className="shop-item">
+                <img src={product.image} alt={product.name} className="shop-img" />
                 <div className="item-details">
-                  <p>{box.box_name} </p>
-                  <p>${box.box_price}</p>
+                  <p>{product.name}</p>
+                  <p>${product.price}</p>
                 </div>
               </div>
             ))}
