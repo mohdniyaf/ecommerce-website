@@ -27,7 +27,7 @@ router.route('/addProduct').post(upload.single('images'), addProduct);
 
 router.route('/getcategory').get(getCategory);
 router.route('/productload').get(protect,productLoad);
-router.route('/productSingleView').get(protect,productSingleView);
+router.route('/productSingleView/:id').get(productSingleView);
 router.route('/addCategory').post(addCategory);
 router.route('/allProducts').get(allProducts);
 

@@ -1,73 +1,59 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useShop } from '../../CONTEXT/ShopContext';
-import { FaHeart, FaShoppingCart, FaInfoCircle } from 'react-icons/fa'; // Importing icons
+import axios from 'axios';
+import { FaHeart, FaShoppingCart } from 'react-icons/fa'; 
 import './Shop.css';
 
 const Shop = () => {
-  const { productId } = useParams(); // Get the productId from URL params
-  const { products } = useShop(); // Get products from context
+  const { productId } = useParams(); 
+  const [product, setProduct] = useState(null); 
   const [quantity, setQuantity] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Find the product based on productId
-  const product = products.find(p => p.id === parseInt(productId));
+  useEffect(() => {
+    // Fetch product data from the backend using the productId
+    const fetchProduct = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(`http://localhost:3000/api/admin/productSingleView/${productId}`);
+        setProduct(response.data);
+        console.log("data received", product);
+      } catch (err) {
+        setError('Product not found');
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  if (!product) {
-    return <p>Product not found</p>;
+    fetchProduct();
+  }, [productId]);
+
+  const handleIncrement = () => setQuantity(prev => prev + 1);
+  const handleDecrement = () => setQuantity(prev => (prev > 1 ? prev - 1 : prev));
+  const handleAddToCart = () => alert(`${quantity} of ${product.name} added to cart`);
+  const handleAddToWishlist = () => alert(`${product.name} added to wishlist`);
+
+  if (loading) {
+    return <p>Loading...</p>;
   }
 
-  const handleIncrement = () => {
-    setQuantity(prevQuantity => prevQuantity + 1);
-  };
-
-  const handleDecrement = () => {
-    if (quantity > 1) {
-      setQuantity(prevQuantity => prevQuantity - 1);
-    }
-  };
-
-  const handleAddToCart = () => {
-    alert("Product added to cart");
-    console.log(`Added ${quantity} of ${product.name} to cart`);
-  };
-
-  const handleAddToWishlist = () => {
-    alert("Product added to wishlist");
-    console.log(`Added ${product.name} to wishlist`);
-  };
+  if (error || !product) {
+    return <p>{error || 'Product not found'}</p>;
+  }
 
   return (
     <div className="product-detail-container">
       <div className="product-detail">
         <div className="product-images">
-          <div className="main-image">
-            <img src={product.image} alt="Product main view" />
-          </div>
+          <img src={`http://localhost:3000/${product.images[0].url}`} alt={product.name} className="main-image"/>
         </div>
         <div className="product-info">
           <h1>{product.name}</h1>
-          <p className="product-description">
-            {product.description}
-            <br />
-            <strong>Introduction:</strong> Our versatile accent chair is perfect for any space, from dining rooms to cafes. This chair is built to last with its strong steel frame. The high tensile velvet fabric provides ultimate relaxation while the powder-coated steel legs add a sleek finish.
-            <br />
-            <strong>Specifications:</strong>
-            <br />
-            - Stock: 20
-            <br />
-            - Color: Black
-            <br />
-            - Size: Various sizes available
-            <br />
-            - Weight: Lightweight
-          </p>
-          {product.discountPrice ? (
-            <>
-              <p className="real-price">${product.price}</p>
-              <p className="offer-price">${product.discountPrice} - Save ${product.price - product.discountPrice}</p>
-            </>
-          ) : (
-            <p className="real-price">${product.price}</p>
+          <p className="product-description">{product.description}</p>
+          <p className="real-price">${product.price}</p>
+          {product.offerPrice && (
+            <p className="offer-price">Discount Price: ${product.offerPrice}</p>
           )}
           <div className="quantity-controls">
             <button onClick={handleDecrement}>-</button>
@@ -81,9 +67,7 @@ const Shop = () => {
             <button className="add-to-cart" onClick={handleAddToCart}>
               <FaShoppingCart /> Add to Cart
             </button>
-            <button className="buy-now">
-              Buy Now
-            </button>
+            <button className="buy-now">Buy Now</button>
           </div>
         </div>
       </div>

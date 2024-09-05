@@ -70,7 +70,7 @@ const allProducts = async (req, res) => {
 // <-------------------------------------------------------| RENDERING DETAILED VIEW OF A  PRODUCTS -------------------------------------------|>
 const productSingleView = async (req, res) => {
   try {
-    const id = req.query.id;
+    const id = req.params.id;
     console.log(id);
     
     // Fetch product by ID

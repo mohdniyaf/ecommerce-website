@@ -34,7 +34,7 @@ const ShopCategory = () => {
             <Item
               key={product._id}
               id={product._id}
-              image={product.images[0].url}  
+              image={product.images[0].url}  // Make sure the image path is correct
               name={product.name}
               price={product.price}
             />
